@@ -5,7 +5,13 @@ export default function Chain({ id, tabs, setTabs, data }) {
   const [chain, setChain] = useState(data);
 
   useEffect(() => {
-    console.log(chain)
+    setTabs(tabs.map(
+    (e,i)=>{
+        if(id===i) return chain;
+        return e;
+      }
+
+    ))
   
   },[chain]);
 

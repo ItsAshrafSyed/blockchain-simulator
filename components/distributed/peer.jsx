@@ -23,13 +23,13 @@ function Peer({ select, name }) {
 
          
         </span>
-        {select && (
+        
             <button className="">
               <AiOutlineClose
-                className={`w-3 text-thick text-purple-500 hover:text-red-500 h-3`}
+                className={`w-3 text-thick text-purple-500 hover:text-red-500 h-3 ${select?"visible":'invisible'}`}
               />
             </button>
-          )}
+       
       </span>
         <span
           className={`font-thin font-robo mx-1  ${

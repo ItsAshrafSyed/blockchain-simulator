@@ -58,8 +58,8 @@ export default function Peers() {
       ...tabs,
       [
         {
-          block: tabs.length,
-          chain: 1,
+          block: 1,
+          chain: tabs.length+1,
           nonce: 11316,
           previous: "0000",
           hash: "000015783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf",
@@ -78,13 +78,14 @@ export default function Peers() {
       <div className="">
         <Tab.Group
           selectedIndex={selectedIndex}
-          onChange={() => {
-           
+          onChange={(index) => {
+           setSelectedIndex(index)
             setIsShowing(false);
             setTimeout(() => setIsShowing(true), 100);
           }}
         >
-          <Tab.List className="flex space-x-10 rounded-xl w-[60rem] overflow-x-scroll scrollbar-thin">
+          <Tab.List
+           className="flex space-x-6 rounded-xl w-[60rem] overflow-x-scroll scrollbar-thin">
             {names.slice(0, tabs.length ).map((name, id) => (
                <div className="flex flex-col justify-center items-start">
               <Tab key={id}>
@@ -94,11 +95,11 @@ export default function Peers() {
                    
                 )}
               </Tab>
-              {true && (
-                      <span className="p-1 border mx-4 rounded-full ">
+             
+                      <span className={`p-1 border mx-4 rounded-full hover:cursor-pointer ${id===selectedIndex?"invisible":"visible"}`}>
                         <RiUserAddLine className="w-3 h-3" />
                       </span>
-                    )}
+                    
                   </div>
             ))}
           </Tab.List>
