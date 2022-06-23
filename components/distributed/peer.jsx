@@ -1,9 +1,10 @@
 import { AiOutlineClose, AiOutlineUser } from "react-icons/ai";
 
-function Peer({ select, name }) {
+function Peer({ select, name,close,id }) {
+ 
   return (
     <div className="  ">
-      <div className="flex flex-col relative justify-start items-start  mx-2 my-1">
+      <div className="flex flex-col relative justify-start items-start  mx-2 my-1 group">
         <span
           className={`p-[0.93rem] z-0 ml-[0.45rem] mt-2   absolute opacity-70 rounded-full  ${
             select ? "animate-ping bg-purple-700" : "bg-sky-600"
@@ -24,16 +25,18 @@ function Peer({ select, name }) {
          
         </span>
         
-            <button className="">
+          <span  onClick={()=>close(id)}>
+          
               <AiOutlineClose
                 className={`w-3 text-thick text-purple-500 hover:text-red-500 h-3 ${select?"visible":'invisible'}`}
               />
-            </button>
+            
+          </span>
        
       </span>
         <span
           className={`font-thin font-robo mx-1  ${
-            select ? " text-purple-600 hover:text-purple-700" : "text-blue-600 hover:text-blue-700"
+            select ? " text-purple-600 hover:text-purple-700" : "text-gray-500 group-hover:text-blue-700"
           }`}
         >
           {name}

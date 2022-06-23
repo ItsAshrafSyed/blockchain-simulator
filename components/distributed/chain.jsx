@@ -3,17 +3,14 @@ import BlockChain from "../blockchain";
 
 export default function Chain({ id, tabs, setTabs, data }) {
   const [chain, setChain] = useState(data);
-
   useEffect(() => {
-    setTabs(tabs.map(
-    (e,i)=>{
-        if(id===i) return chain;
+    setTabs(
+      tabs.map((e, i) => {
+        if (id === i) return { name: e.name, data: chain };
         return e;
-      }
-
-    ))
-  
-  },[chain]);
+      })
+    );
+  }, [chain]);
 
   return (
     <div>

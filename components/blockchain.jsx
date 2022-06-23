@@ -74,7 +74,7 @@ const BlockChain = ({chain,setChain}) => {
   return (
     <div className="flex flex-col space-y-5 justify-center items-center">
       <h1 className="text-4xl text-center font-black m-4 font-pop">
-        BLOCK CHAIN
+        BLOCK CHAIN {chain[0]["chain"]}
       </h1>
       <Block data={chain[0]} hashChange={hashChange} mine={mine} />
       {chain.slice(1).map((e) => (

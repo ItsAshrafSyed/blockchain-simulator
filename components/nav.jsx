@@ -27,7 +27,7 @@ function Nav() {
       "text-gray-300 hover:bg-purple-500 hover:text-white block px-3 py-2 rounded-md text-base font-medium",
   };
   return (
-    <nav className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 max-w-screen w-11/12 rounded-xl  bg-opacity-60 backdrop-filter backdrop-blur-lg  mt-2">
+    <nav className="bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 max-w-screen w-11/12 rounded-xl  bg-opacity-60 backdrop-filter backdrop-blur-lg z-50 mt-2">
       <div className="max-w-screen px-4 py-2 sm:px-6 relative lg:px-8">
         <div className="flex items-center justify-between ">
           <div className="flex w-full items-center justify-between">
