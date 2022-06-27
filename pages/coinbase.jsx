@@ -430,6 +430,43 @@ class Tokens extends Component {
 											{item.nonce}
 										</div>
 									</div>
+									<div className="contianer">
+										<p className="text-sm">Wallets</p>
+										<div className="flex-1">
+											<div className="grid grid-cols-4 ">
+												{item.balance.map((data, ind) => {
+													return (
+														<div className="flex m-[1px]">
+															<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-gray-50">
+																{data.name}
+															</div>
+															<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
+																<input
+																	value={data.wallet}
+																	onwheel="return false;"
+																	type="number"
+																	className="w-[50px] border-none  text-sm   bg-red-50"
+																	onChange={(e) => {
+																		console.log();
+
+																		let temp = data;
+																		temp.wallet = parseInt(e.target.value);
+																		let temp2 = this.state.blocks;
+																		temp2[index].balance[ind] = temp;
+																		this.setState({
+																			blocks: temp2,
+																		});
+																		this.hashChange(index, item, temp.wallet);
+																	}}
+																/>
+															</div>
+														</div>
+													);
+												})}
+											</div>
+										</div>
+									</div>
+
 									<div className="flex">
 										<div className={this.styles.inputtext}>Tx :</div>
 
