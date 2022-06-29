@@ -302,35 +302,6 @@ class Tokens extends Component {
 		});
 	}
 
-	// check_input_balance(object,obji,item,itemi){
-	//     // console.log(object,"obj");
-	//     let res = item.balance.filter((data)=>{if(data.name === object.name){return data}})
-	//     // console.log(res);
-	//     let temp = object;
-	//     let temp2 = item;
-	//     if(res.wallet > object.amount)
-	//     {
-	//         // console.log("true");
-	//         temp.status = true;
-	//         temp2.trans[obji] = temp;
-	//         temp = this.state.blocks;
-	//         temp[itemi] = temp2;
-	//         this.setState({blocks:temp});
-
-	//         return true;
-	//     }
-	//     else{
-	//         temp.status = false;
-	//         temp2.trans[obji] = temp;
-	//         temp = this.state.blocks;
-	//         temp[itemi] = temp2;
-	//         // this.setState({blocks:temp});
-	//         // console.log(temp2,"test");
-
-	//         return false;
-	//     }
-	// }
-
 	styles = {
 		wrapper: `font-robo flex space-y-5  block  bg-white align-center w-[340px] md:w-[1280px] p-5 pt-8 border max-w-md md:max-w-xl justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
 		inputwrapper: "  flex  items-center ",
