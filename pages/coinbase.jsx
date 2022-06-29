@@ -364,7 +364,7 @@ class Tokens extends Component {
 						className="text-4xl m-[5px] font-pop w-auto mx-auto justify-center "
 						aria-current="page"
 					>
-						Tokens
+						Coinbase
 					</span>
 
 					{/* <div className="flex columns-2">
