@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
-        <title>Block Chain Demo</title>
+        <title>BlockChain Demo</title>
       </Head>
       <Component {...pageProps} />
     </Layout>

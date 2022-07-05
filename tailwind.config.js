@@ -9,7 +9,6 @@ module.exports = {
         pop:["Poppins","sans-serif"],
         robo:['Roboto', 'sans-serif'],
         dev:['Tiro Devanagari Hindi', 'serif']
-        
       }
     },
   },

@@ -4,7 +4,7 @@ export default function HashPage(){
 
   return(
     <div className="mt-4">
-      <span className="font-bold text-xl font-pop">Sha256 Hash</span>
+      <h1 className="text-[2rem] font-bold font-robo my-4 ">Sha256 Hash</h1>
       <Hash/>
     </div>
   )

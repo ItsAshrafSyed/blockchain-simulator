@@ -5,11 +5,21 @@ import { useState } from "react";
 import { FcExpand } from "react-icons/fc";
 import { sha256 } from "js-sha256";
 
-const BlockChain = ({chain,setChain}) => {
+const BlockChain = () => {
   //Back Process
   var difficulty = 4;
   var maximumNonce = 500000;
   var pattern = "";
+  const [chain, setChain] = useState([
+    {
+      block: 1,
+      chain: 1,
+      nonce: 11316,
+      previous: "0000",
+      hash: "000015783b764259d382017d91a36d206d0600e2cbb3567748f46a33fe9297cf",
+      data: " block data",
+      timestamp: Date().toString(),
+    }])
   for (var x = 0; x < difficulty; x++) {
     pattern += "0";
   }
@@ -73,9 +83,7 @@ const BlockChain = ({chain,setChain}) => {
 
   return (
     <div className="flex flex-col space-y-5 justify-center items-center">
-      <h1 className="text-4xl text-center font-black m-4 font-pop">
-        BLOCK CHAIN {chain[0]["chain"]}
-      </h1>
+   
       <Block data={chain[0]} hashChange={hashChange} mine={mine} />
       {chain.slice(1).map((e) => (
         <div

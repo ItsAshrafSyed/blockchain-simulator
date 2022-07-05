@@ -5,8 +5,9 @@ const Layout = ({ children }) => {
   return (
 
     <>
-      <Header />
+     
       <div className="flex flex-col justify-center items-center">
+        <Nav/>
         {children}
       </div>
     </>

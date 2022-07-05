@@ -4,12 +4,12 @@ import { useState } from "react";
 
 const Block = ({ data, hashChange, mine }) => {
   const styles = {
-    wrapper: `font-robo flex space-y-5  block  bg-white align-center w-sm sm:w-full sm:w-screen p-5 pt-8 border max-w-md md:max-w-xl justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
+    wrapper: `font-robo flex space-y-5  block  bg-white align-center w-[18rem] md:w-[20rem] xl:w-[22rem]  p-5 pt-8 border max-w-xl  justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
     inputwrapper: "  flex  items-center ",
-    input: "outline-none text-xs p-[4px]  flex-1 ",
+    input: "outline-none text-xs p-[2px]  flex-1 ",
     inputgroup: `p-[3px]  hover:border-sky-400 focus-within:ring-2 focus-within:ring-sky-100 focus-within:border-sky-400 flex rounded-r-lg items-center border flex-1 transition ease-in-out`,
-    texticon: "p-[4px] pl-2",
-    inputtext: "border rounded-l-lg p-[5px] text-sm font-light bg-gray-50 px-4",
+    texticon: "p-[2px] pl-2",
+    inputtext: "border rounded-l-lg p-[3px] text-sm font-light bg-gray-50 px-4",
   };
   const text = {
     wrapper: "space-y-2 ",
@@ -17,17 +17,17 @@ const Block = ({ data, hashChange, mine }) => {
     scroll:
       "overflow-x-scroll scrollbar-thin text-[13px] max-md transition-all",
     green: " bg-lime-50 border text-[#52c41a] rounded border-[#52c41a] px-2",
-    txt: "text-sm",
-    greenprev: "text-[#52c41a] text-[0.7rem]",
-    redprev: "text-red-400 text-[0.7rem]",
+    txt: "text-xs",
+    greenprev: "text-[#52c41a] text-[0.6rem]",
+    redprev: "text-red-400 text-[0.6rem]",
     red: " bg-red-50 border text-red-400 rounded border-red-400 px-2",
   };
   const button = {
     btn: `${
       data.hash.slice(0, 4) === "0000"
-        ? "cursor-not-allowed bg-gradient-to-r from-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
-        : "bg-gray-700 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300"
-    } flex items-center text-white font-medium rounded-lg  px-4 space-x-2 py-[5px]  transition-all text-white font-pop`,
+        ? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
+        : "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
+    } flex items-center text-white font-medium rounded-lg  px-3 space-x-2 py-[4px]  transition-all text-white font-pop`,
   };
 
   return (
@@ -41,7 +41,7 @@ const Block = ({ data, hashChange, mine }) => {
           <input
             value={data.data}
             onChange={(e) => hashChange(data, e.target.value)}
-            placeholder="welcome to blockchain demo!"
+            placeholder="Enter data"
             className={styles.input}
             type="text"
           />
@@ -73,14 +73,14 @@ const Block = ({ data, hashChange, mine }) => {
       </div>
       <div className="flex items-center space-x-2">
         <p className={text.txt}>NONCE</p>
-        <div className="text-sm border bg-gray-50 px-2 py-[2px] rounded ">
+        <div className="text-xs border bg-gray-50 px-2 py-[2px] rounded ">
           {data.nonce}
         </div>
       </div>
       <div className="flex justify-between">
-        <div className="text-2xl font-pop">
+        <div className="text-xl font-pop">
           BLOCK #{data.block}{" "}
-          <span className="text-xs">{data.timestamp.split("(")[0]}</span>
+          <span className="text-[0.5rem]">{data.timestamp.split("G")[0]}</span>
         </div>
         <div>
           <button
