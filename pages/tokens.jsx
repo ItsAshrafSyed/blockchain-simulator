@@ -643,6 +643,13 @@ class Tokens extends Component {
 					],
 				},
 			],
+			mem_pool: [
+			],
+			add_tx: {
+				amount: 10,
+				from: "Darcy",
+				to: "Ash"
+			}
 
 		};
 		var difficulty = 4;
@@ -823,7 +830,7 @@ class Tokens extends Component {
 											<div className={`${item.hash.slice(0, 4) === "0000"
 												? ""
 												: " border-red-200 bg-red-100"
-												} ${this.styles.wrapper}`} key={index}>
+												} ${this.styles.wrapper}`} key={index * 10}>
 												<div className="text-2xl font-pop">
 													BLOCK #{item.block}{" "}
 													<span className="text-xs">
@@ -860,10 +867,11 @@ class Tokens extends Component {
 																return (
 																	<>
 																		<div
-																			className={`${object.status == true
+																			className={`${true
 																				? " "
 																				: "bg-red-50 filter text-red-400"
 																				} ${"flex"}`}
+																			key={index * 10 + i}
 																		>
 																			<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-gray-50">
 																				$
@@ -877,13 +885,13 @@ class Tokens extends Component {
 																						// console.log()
 
 																						let temp = object;
-																						let static_amount = object.amount;
+																						// let static_amount = object.amount;
 																						temp.amount = parseInt(e.target.value);
-																						let res = item.balance.filter((data) => {
-																							if (data.name === object.from) {
-																								return data;
-																							}
-																						});
+																						// let res = item.balance.filter((data) => {
+																						// 	if (data.name === object.from) {
+																						// 		return data;
+																						// 	}
+																						// });
 																						// console.log(res[0],"res");
 																						// if (res[0].wallet >= temp.amount) {
 																						// 	temp.status = true;
@@ -978,7 +986,7 @@ class Tokens extends Component {
 											<div className={`${item.hash.slice(0, 4) === "0000"
 												? ""
 												: " border-red-200 bg-red-100"
-												} ${this.styles.wrapper}`} key={index}>
+												} ${this.styles.wrapper}`} key={index * 100}>
 												<div className="text-2xl font-pop">
 													BLOCK #{item.block}{" "}
 													<span className="text-xs">
@@ -1015,7 +1023,8 @@ class Tokens extends Component {
 																return (
 																	<>
 																		<div
-																			className={`${object.status == true
+																			key={index * 100 + i}
+																			className={`${true
 																				? " "
 																				: "bg-red-50 filter text-red-400"
 																				} ${"flex"}`}
@@ -1032,13 +1041,13 @@ class Tokens extends Component {
 																						// console.log()
 
 																						let temp = object;
-																						let static_amount = object.amount;
+																						// let static_amount = object.amount;
 																						temp.amount = parseInt(e.target.value);
-																						let res = item.balance.filter((data) => {
-																							if (data.name === object.from) {
-																								return data;
-																							}
-																						});
+																						// let res = item.balance.filter((data) => {
+																						// 	if (data.name === object.from) {
+																						// 		return data;
+																						// 	}
+																						// });
 																						// console.log(res[0],"res");
 																						// if (res[0].wallet >= temp.amount) {
 																						// 	temp.status = true;
@@ -1133,7 +1142,7 @@ class Tokens extends Component {
 											<div className={`${item.hash.slice(0, 4) === "0000"
 												? ""
 												: " border-red-200 bg-red-100"
-												} ${this.styles.wrapper}`} key={index}>
+												} ${this.styles.wrapper}`} key={index * 1000}>
 												<div className="text-2xl font-pop">
 													BLOCK #{item.block}{" "}
 													<span className="text-xs">
@@ -1170,7 +1179,8 @@ class Tokens extends Component {
 																return (
 																	<>
 																		<div
-																			className={`${object.status == true
+																			key={index * 1000 + i}
+																			className={`${true
 																				? " "
 																				: "bg-red-50 filter text-red-400"
 																				} ${"flex"}`}
@@ -1187,13 +1197,13 @@ class Tokens extends Component {
 																						// console.log()
 
 																						let temp = object;
-																						let static_amount = object.amount;
+																						// let static_amount = object.amount;
 																						temp.amount = parseInt(e.target.value);
-																						let res = item.balance.filter((data) => {
-																							if (data.name === object.from) {
-																								return data;
-																							}
-																						});
+																						// let res = item.balance.filter((data) => {
+																						// 	if (data.name === object.from) {
+																						// 		return data;
+																						// 	}
+																						// });
 																						// console.log(res[0],"res");
 																						// if (res[0].wallet >= temp.amount) {
 																						// 	temp.status = true;
@@ -1275,18 +1285,294 @@ class Tokens extends Component {
 								})}
 							</div>
 						</div>
-						<div className="flex">
+						<div className="">
 							<div className="p-2">
-								<div className=" position-static font-robo flex space-y-5  block  bg-white align-center w-[18rem] md:w-[20rem] xl:w-[22rem]  p-5 pt-8 border max-w-xl   justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all" >
-								<h6>Tx:</h6>
+								<span
+									className="text-2xl font-pop w-auto mx-auto justify-center "
+								>
+									Add Block
+								</span>
+								<div className="font-robo flex space-y-5  block  bg-white align-center    w-[18rem] md:w-[20rem] xl:w-[22rem]  p-5 pt-8 border max-w-xl   justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all" >
+								<span
+									className="text-xl font-pop"
+								>
+									Tx
+								</span>
 									<div className="flex">
-											
-										<div className="flex-1 rounded-r-lg items-center border">
-											<div class="grid grid-cols-3 ">
 
+										<div className="static flex-1 rounded-r-lg items-center border">
+											<div class="grid grid-cols-3 ">
+												<>
+													<div
+														className={`${true
+															? " "
+															: "bg-red-50 filter text-red-400"
+															} ${"flex"}`}
+													>
+														<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-gray-50">
+															$
+														</div>
+														<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
+															<input
+																value={this.state.add_tx.amount}
+																onChange={
+
+																	(e) => {
+																		let temp = this.state.add_tx;
+																		temp.amount = e.target.value;
+																		this.setState({
+																			add_tx: temp
+																		})
+																	}
+																}
+																className="rounded-r-lg text-sm font-light  bg-red-50"
+																type="number"
+															/>
+														</div>
+													</div>
+													<div className="flex">
+														<div className="flex  p-[5px] text-sm font-light bg-purple-50">
+															{"From"}
+														</div>
+														<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
+															<input
+																value={this.state.add_tx.from}
+																onChange={
+
+																	(e) => {
+																		let temp = this.state.add_tx;
+																		temp.from = e.target.value;
+																		this.setState({
+																			add_tx: temp
+																		})
+																	}
+																}
+																className="rounded-r-lg max-w-[60px] text-sm font-light  bg-red-50"
+																type="text"
+															/>
+														</div>
+													</div>
+													<div className="flex">
+														<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-purple-50">
+															{"To"}
+														</div>
+														<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
+															<input
+																value={this.state.add_tx.to}
+																onChange={
+
+																	(e) => {
+																		let temp = this.state.add_tx;
+																		temp.to = e.target.value;
+																		this.setState({
+																			add_tx: temp
+																		})
+																	}
+																}
+																className="rounded-r-lg max-w-[60px] text-sm font-light  bg-red-50"
+																type="text"
+															/>
+														</div>
+													</div>
+												</>
 											</div>
 										</div>
 									</div>
+
+									<div className="flex">
+										<button
+											// disabled={item.hash.slice(0, 4) === "0000"}
+											onClick={() => {
+
+												let temp = this.state.mem_pool;
+												temp.push({
+													"amount": this.state.add_tx.amount,
+													"from": this.state.add_tx.from,
+													"to": this.state.add_tx.to
+												})
+												this.setState({
+													mem_pool: temp
+												})
+
+											}}
+											className={`${"00009" === "0000"
+												? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
+												: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
+												}  text-white w-auto mx-auto font-medium rounded-lg px-[6px] space-x-2 py-[4px]   transition-all text-white font-pop`}
+										>
+											{/* <GiMiner /> */}
+											<span className=" font-medium text-sm ">Add to Mem-Pool</span>
+										</button>
+									</div>
+
+									<span
+										className="text-2xl  font-pop"
+									>
+										Mem-Pool
+									</span>
+
+									<div className="flex">
+
+										{
+											this.state.mem_pool.length != 0 && <div className="flex-1 rounded-r-lg items-center border">
+												<div class="grid grid-cols-3 ">
+													{this.state.mem_pool.map((object, i) => {
+														return (
+															<>
+																<div
+																	className={`${true
+																		? " "
+																		: "bg-red-50 filter text-red-400"
+																		} ${"flex"}`}
+																>
+																	<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-gray-50">
+																		$
+																	</div>
+																	<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
+																		{/* <input
+																		value={20}
+																		className="rounded-r-lg text-sm font-light  bg-red-50"
+																		type="number"
+																	/> */}
+																		{object.amount}
+																	</div>
+																</div>
+																<div className="flex">
+																	<div className="flex  p-[5px] text-sm font-light bg-purple-50">
+																		{"From"}
+																	</div>
+																	<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
+																		{object.from}
+																	</div>
+																</div>
+																<div className="flex">
+																	<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-purple-50">
+																		{"To"}
+																	</div>
+																	<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
+																		{object.to}
+																	</div>
+																</div>
+															</>
+
+														)
+													})}
+												</div>
+
+
+											</div>
+
+										}
+										{
+											this.state.mem_pool.length == 0 && <div className="flex-1 text-sm font-light bg-gray-50 p-[5px] rounded-lg items-center border">
+												<h6>Mem-Pool Empty</h6>
+											</div>
+										}
+									</div>
+
+									{
+										this.state.mem_pool.length != 0 && <div className="flex mx-auto w-auto">
+											<button
+												onClick={() => {
+
+													let _block_number = this.state.alice_blocks.length - 1;
+													let _prev_hash = this.state.alice_blocks[_block_number].hash;
+													let _hash = this.getSha256(this.state.alice_blocks[_block_number].block + this.state.alice_blocks[_block_number].nonce + this.state.alice_blocks[_block_number].previous);
+													_hash = "0000" + _hash.slice(4);
+													let _timestamp = Date().toString();
+													let t1 = this.state.mem_pool.map((obj) => {
+														return obj
+													});
+													let t2 = this.state.mem_pool.map((obj) => {
+														return obj
+													});
+													let t3 = this.state.mem_pool.map((obj) => {
+														return obj
+													})
+
+													let new_block1 = {
+														"block": _block_number + 2,
+														"chain": 1,
+														"nonce": parseInt((Math.random() * 100000).toFixed(0)),
+														"previous": _prev_hash,
+														"hash": _hash,
+														"timestamp": _timestamp,
+														"trans": t1
+													}
+													let new_block2 = {
+														"block": _block_number + 2,
+														"chain": 1,
+														"nonce": parseInt((Math.random() * 100000).toFixed(0)),
+														"previous": _prev_hash,
+														"hash": _hash,
+														"timestamp": _timestamp,
+														"trans": t2
+													}
+													let new_block3 = {
+														"block": _block_number + 2,
+														"chain": 1,
+														"nonce": parseInt((Math.random() * 100000).toFixed(0)),
+														"previous": _prev_hash,
+														"hash": _hash,
+														"timestamp": _timestamp,
+														"trans": t3
+													};
+
+													let b1 = this.state.alice_blocks;
+													b1.push(new_block1);
+
+													let b2 = this.state.bob_blocks;
+													b2.push(new_block2);
+
+													let b3 = this.state.nancy_blocks;
+													b3.push(new_block3);
+
+													// let _block_number2 = this.state.bob_blocks.length-1;
+													// let _prev_hash2 = this.state.alice_blocks[_block_number2].hash;
+													// let _hash2 = this.getSha256(this.state.alice_blocks[_block_number2].block + this.state.alice_blocks[_block_number].nonce + this.state.alice_blocks[_block_number].previous);
+													// _hash2 = "0000" + _hash.slice(4);
+													// let _timestamp2 = Date().toString();
+													// let new_block2 = {
+													// 	"block":_block_number2+2,
+													// 	"chain":1,
+													// 	"nonce":parseInt((Math.random() * 100000).toFixed(0)),
+													// 	"previous":_prev_hash2,
+													// 	"hash":_hash2,
+													// 	"timestamp":_timestamp2,
+													// 	"trans":this.state.mem_pool
+													// }
+													// let temp2 = this.state.bob_blocks;
+													// temp2.push(new_block2);
+
+													// temp1[_block_number+1] = new_block;
+													// temp2[_block_number+1] = new_block;
+													// temp3[_block_number+1] = new_block;
+													// this.setState({
+													// 	alice_blocks:temp1,
+													// })
+													// this.setState({
+													// 	bob_blocks:temp2,
+													// })
+													// this.setState({
+													// 	nancy_blocks:temp3,
+													// })
+													this.setState({
+														mem_pool: []
+													})
+													window.scrollTo(0,document.body.scrollHeight,{ behavior: "smooth" });
+
+												}}
+												className={`${"2" === "0000"
+													? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
+													: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
+													} flex items-rigth text-white font-medium rounded-lg  px-3 space-x-2 py-[4px]  transition-all text-white font-pop`}
+											>
+												<GiMiner />
+												<span> Mine </span>{" "}
+											</button>
+										</div>
+
+									}
 								</div>
 							</div>
 						</div>
