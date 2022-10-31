@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import BlockChain from '../components/blockchain'
+import { useState } from "react";
 import Hash from "../components/hash/hash";
 
 export default function Home() {
