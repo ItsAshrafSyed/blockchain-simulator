@@ -809,36 +809,40 @@ class Tokens extends Component {
 		return (
 			<>
 				<div className="flex flex-col margin-3 space-y-5 justify-center items-center">
-					<span
+					{/* <span
 						className="text-4xl m-[5px] font-pop w-auto mx-auto justify-center "
 						aria-current="page"
 					>
 						Tokens
-					</span>
+					</span> */}
 
 					<div className="flex columns-4 ">
 						<div className="flex">
 							<div className="p-2">
-								<span
-									className="text-2xl font-pop w-auto mx-auto justify-center "
-								>
-									Peer Alice
+								<span className="text-2xl font-pop w-auto mx-auto justify-center ">
+									Alice
 								</span>
 								{this.state.alice_blocks.map((item, index) => {
 									return (
 										<>
-											<div className={`${item.hash.slice(0, 4) === "0000"
-												? ""
-												: " border-red-200 bg-red-100"
-												} ${this.styles.wrapper}`} key={index * 10}>
+											<div
+												className={`${
+													item.hash.slice(0, 4) === "0000"
+														? ""
+														: " border-red-200 bg-red-100"
+												} ${this.styles.wrapper}`}
+												key={index * 10}
+											>
 												<div className="text-2xl font-pop">
 													BLOCK #{item.block}{" "}
 													<span className="text-xs">
-														{this.state.users[0].chain[0].timestamp.split("(")[0]}
+														{
+															this.state.users[0].chain[0].timestamp.split(
+																"("
+															)[0]
+														}
 													</span>
-
 												</div>
-
 												<div className="flex items-center space-x-2">
 													<p className="text-sm">NONCE</p>
 													<div className="text-sm border bg-gray-50 px-2 py-[2px] rounded ">
@@ -849,10 +853,11 @@ class Tokens extends Component {
 														onClick={() => {
 															this.alice_mine(index, item);
 														}}
-														className={`${item.hash.slice(0, 4) === "0000"
-															? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
-															: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
-															} flex items-rigth text-white font-medium rounded-lg  px-3 space-x-2 py-[2px] float-right  transition-all text-white font-pop`}
+														className={`${
+															item.hash.slice(0, 4) === "0000"
+																? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
+																: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
+														} flex items-rigth text-white font-medium rounded-lg  px-3 space-x-2 py-[2px] float-right  transition-all text-white font-pop`}
 													>
 														<GiMiner />
 														<span>Mine</span>{" "}
@@ -860,17 +865,17 @@ class Tokens extends Component {
 												</div>
 												Tx:
 												<div className="flex">
-
 													<div className="flex-1 rounded-r-lg items-center border">
 														<div class="grid grid-cols-3 ">
 															{item.trans.map((object, i) => {
 																return (
 																	<>
 																		<div
-																			className={`${true
-																				? " "
-																				: "bg-red-50 filter text-red-400"
-																				} ${"flex"}`}
+																			className={`${
+																				true
+																					? " "
+																					: "bg-red-50 filter text-red-400"
+																			} ${"flex"}`}
 																			key={index * 10 + i}
 																		>
 																			<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-gray-50">
@@ -886,7 +891,9 @@ class Tokens extends Component {
 
 																						let temp = object;
 																						// let static_amount = object.amount;
-																						temp.amount = parseInt(e.target.value);
+																						temp.amount = parseInt(
+																							e.target.value
+																						);
 																						// let res = item.balance.filter((data) => {
 																						// 	if (data.name === object.from) {
 																						// 		return data;
@@ -910,7 +917,11 @@ class Tokens extends Component {
 																							alice_blocks: temp2,
 																						});
 																						// console.log(this.state.alice_blocks);
-																						this.alice_hashChange(index, item, temp.amount);
+																						this.alice_hashChange(
+																							index,
+																							item,
+																							temp.amount
+																						);
 																					}}
 																					type="number"
 																				/>
@@ -942,10 +953,11 @@ class Tokens extends Component {
 													<div className={this.text.prev}>
 														<p className={this.text.txt}>PREVIOUS HASH</p>
 														<div
-															className={`${item.previous.slice(0, 4) === "0000"
-																? this.text.greenprev
-																: this.text.redprev
-																} ${this.text.scroll}`}
+															className={`${
+																item.previous.slice(0, 4) === "0000"
+																	? this.text.greenprev
+																	: this.text.redprev
+															} ${this.text.scroll}`}
 														>
 															{item.previous}
 														</div>
@@ -953,10 +965,11 @@ class Tokens extends Component {
 													<div className={this.text.prev}>
 														<p className={this.text.txt}>HASH</p>
 														<div
-															className={`${item.hash.slice(0, 4) === "0000"
-																? this.text.green
-																: this.text.red
-																} ${this.text.scroll}`}
+															className={`${
+																item.hash.slice(0, 4) === "0000"
+																	? this.text.green
+																	: this.text.red
+															} ${this.text.scroll}`}
 														>
 															{item.hash}
 														</div>
@@ -975,26 +988,30 @@ class Tokens extends Component {
 						</div>
 						<div className="flex">
 							<div className="p-2">
-								<span
-									className="text-2xl font-pop w-auto mx-auto justify-center "
-								>
-									Peer Bob
+								<span className="text-2xl font-pop w-auto mx-auto justify-center ">
+									Bob
 								</span>
 								{this.state.bob_blocks.map((item, index) => {
 									return (
 										<>
-											<div className={`${item.hash.slice(0, 4) === "0000"
-												? ""
-												: " border-red-200 bg-red-100"
-												} ${this.styles.wrapper}`} key={index * 100}>
+											<div
+												className={`${
+													item.hash.slice(0, 4) === "0000"
+														? ""
+														: " border-red-200 bg-red-100"
+												} ${this.styles.wrapper}`}
+												key={index * 100}
+											>
 												<div className="text-2xl font-pop">
 													BLOCK #{item.block}{" "}
 													<span className="text-xs">
-														{this.state.users[0].chain[0].timestamp.split("(")[0]}
+														{
+															this.state.users[0].chain[0].timestamp.split(
+																"("
+															)[0]
+														}
 													</span>
-
 												</div>
-
 												<div className="flex items-center space-x-2">
 													<p className="text-sm">NONCE</p>
 													<div className="text-sm border bg-gray-50 px-2 py-[2px] rounded ">
@@ -1005,10 +1022,11 @@ class Tokens extends Component {
 														onClick={() => {
 															this.bob_mine(index, item);
 														}}
-														className={`${item.hash.slice(0, 4) === "0000"
-															? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
-															: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
-															} flex items-rigth text-white font-medium rounded-lg  px-3 space-x-2 py-[2px] float-right  transition-all text-white font-pop`}
+														className={`${
+															item.hash.slice(0, 4) === "0000"
+																? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
+																: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
+														} flex items-rigth text-white font-medium rounded-lg  px-3 space-x-2 py-[2px] float-right  transition-all text-white font-pop`}
 													>
 														<GiMiner />
 														<span>Mine</span>{" "}
@@ -1016,7 +1034,6 @@ class Tokens extends Component {
 												</div>
 												Tx:
 												<div className="flex">
-
 													<div className="flex-1 rounded-r-lg items-center border">
 														<div class="grid grid-cols-3 ">
 															{item.trans.map((object, i) => {
@@ -1024,10 +1041,11 @@ class Tokens extends Component {
 																	<>
 																		<div
 																			key={index * 100 + i}
-																			className={`${true
-																				? " "
-																				: "bg-red-50 filter text-red-400"
-																				} ${"flex"}`}
+																			className={`${
+																				true
+																					? " "
+																					: "bg-red-50 filter text-red-400"
+																			} ${"flex"}`}
 																		>
 																			<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-gray-50">
 																				$
@@ -1042,7 +1060,9 @@ class Tokens extends Component {
 
 																						let temp = object;
 																						// let static_amount = object.amount;
-																						temp.amount = parseInt(e.target.value);
+																						temp.amount = parseInt(
+																							e.target.value
+																						);
 																						// let res = item.balance.filter((data) => {
 																						// 	if (data.name === object.from) {
 																						// 		return data;
@@ -1066,7 +1086,11 @@ class Tokens extends Component {
 																							bob_blocks: temp2,
 																						});
 																						// console.log(this.state.alice_blocks);
-																						this.bob_hashChange(index, item, temp.amount);
+																						this.bob_hashChange(
+																							index,
+																							item,
+																							temp.amount
+																						);
 																					}}
 																					type="number"
 																				/>
@@ -1098,10 +1122,11 @@ class Tokens extends Component {
 													<div className={this.text.prev}>
 														<p className={this.text.txt}>PREVIOUS HASH</p>
 														<div
-															className={`${item.previous.slice(0, 4) === "0000"
-																? this.text.greenprev
-																: this.text.redprev
-																} ${this.text.scroll}`}
+															className={`${
+																item.previous.slice(0, 4) === "0000"
+																	? this.text.greenprev
+																	: this.text.redprev
+															} ${this.text.scroll}`}
 														>
 															{item.previous}
 														</div>
@@ -1109,10 +1134,11 @@ class Tokens extends Component {
 													<div className={this.text.prev}>
 														<p className={this.text.txt}>HASH</p>
 														<div
-															className={`${item.hash.slice(0, 4) === "0000"
-																? this.text.green
-																: this.text.red
-																} ${this.text.scroll}`}
+															className={`${
+																item.hash.slice(0, 4) === "0000"
+																	? this.text.green
+																	: this.text.red
+															} ${this.text.scroll}`}
 														>
 															{item.hash}
 														</div>
@@ -1131,26 +1157,30 @@ class Tokens extends Component {
 						</div>
 						<div className="flex">
 							<div className="p-2">
-								<span
-									className="text-2xl font-pop w-auto mx-auto justify-center "
-								>
-									Peer Nancy
+								<span className="text-2xl font-pop w-auto mx-auto justify-center ">
+									Nancy
 								</span>
 								{this.state.nancy_blocks.map((item, index) => {
 									return (
 										<>
-											<div className={`${item.hash.slice(0, 4) === "0000"
-												? ""
-												: " border-red-200 bg-red-100"
-												} ${this.styles.wrapper}`} key={index * 1000}>
+											<div
+												className={`${
+													item.hash.slice(0, 4) === "0000"
+														? ""
+														: " border-red-200 bg-red-100"
+												} ${this.styles.wrapper}`}
+												key={index * 1000}
+											>
 												<div className="text-2xl font-pop">
 													BLOCK #{item.block}{" "}
 													<span className="text-xs">
-														{this.state.users[0].chain[0].timestamp.split("(")[0]}
+														{
+															this.state.users[0].chain[0].timestamp.split(
+																"("
+															)[0]
+														}
 													</span>
-
 												</div>
-
 												<div className="flex items-center space-x-2">
 													<p className="text-sm">NONCE</p>
 													<div className="text-sm border bg-gray-50 px-2 py-[2px] rounded ">
@@ -1161,10 +1191,11 @@ class Tokens extends Component {
 														onClick={() => {
 															this.nancy_mine(index, item);
 														}}
-														className={`${item.hash.slice(0, 4) === "0000"
-															? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
-															: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
-															} flex items-rigth text-white font-medium rounded-lg  px-3 space-x-2 py-[4px]  transition-all text-white font-pop`}
+														className={`${
+															item.hash.slice(0, 4) === "0000"
+																? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
+																: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
+														} flex items-rigth text-white font-medium rounded-lg  px-3 space-x-2 py-[4px]  transition-all text-white font-pop`}
 													>
 														<GiMiner />
 														<span>Mine</span>{" "}
@@ -1172,7 +1203,6 @@ class Tokens extends Component {
 												</div>
 												Tx:
 												<div className="flex">
-
 													<div className="flex-1 rounded-r-lg items-center border">
 														<div class="grid grid-cols-3 ">
 															{item.trans.map((object, i) => {
@@ -1180,10 +1210,11 @@ class Tokens extends Component {
 																	<>
 																		<div
 																			key={index * 1000 + i}
-																			className={`${true
-																				? " "
-																				: "bg-red-50 filter text-red-400"
-																				} ${"flex"}`}
+																			className={`${
+																				true
+																					? " "
+																					: "bg-red-50 filter text-red-400"
+																			} ${"flex"}`}
 																		>
 																			<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-gray-50">
 																				$
@@ -1198,7 +1229,9 @@ class Tokens extends Component {
 
 																						let temp = object;
 																						// let static_amount = object.amount;
-																						temp.amount = parseInt(e.target.value);
+																						temp.amount = parseInt(
+																							e.target.value
+																						);
 																						// let res = item.balance.filter((data) => {
 																						// 	if (data.name === object.from) {
 																						// 		return data;
@@ -1222,7 +1255,11 @@ class Tokens extends Component {
 																							nancy_blocks: temp2,
 																						});
 																						// console.log(this.state.alice_blocks);
-																						this.nancy_hashChange(index, item, temp.amount);
+																						this.nancy_hashChange(
+																							index,
+																							item,
+																							temp.amount
+																						);
 																					}}
 																					type="number"
 																				/>
@@ -1254,10 +1291,11 @@ class Tokens extends Component {
 													<div className={this.text.prev}>
 														<p className={this.text.txt}>PREVIOUS HASH</p>
 														<div
-															className={`${item.previous.slice(0, 4) === "0000"
-																? this.text.greenprev
-																: this.text.redprev
-																} ${this.text.scroll}`}
+															className={`${
+																item.previous.slice(0, 4) === "0000"
+																	? this.text.greenprev
+																	: this.text.redprev
+															} ${this.text.scroll}`}
 														>
 															{item.previous}
 														</div>
@@ -1265,10 +1303,11 @@ class Tokens extends Component {
 													<div className={this.text.prev}>
 														<p className={this.text.txt}>HASH</p>
 														<div
-															className={`${item.hash.slice(0, 4) === "0000"
-																? this.text.green
-																: this.text.red
-																} ${this.text.scroll}`}
+															className={`${
+																item.hash.slice(0, 4) === "0000"
+																	? this.text.green
+																	: this.text.red
+															} ${this.text.scroll}`}
 														>
 															{item.hash}
 														</div>
@@ -1287,27 +1326,19 @@ class Tokens extends Component {
 						</div>
 						<div className="">
 							<div className="p-2">
-								<span
-									className="text-2xl font-pop w-auto mx-auto justify-center "
-								>
+								<span className="text-2xl font-pop w-auto mx-auto justify-center ">
 									Add Block
 								</span>
-								<div className="font-robo flex space-y-5  block  bg-white align-center    w-[18rem] md:w-[20rem] xl:w-[22rem]  p-5 pt-8 border max-w-xl   justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all" >
-								<span
-									className="text-xl font-pop"
-								>
-									Tx
-								</span>
+								<div className="font-robo flex space-y-5  block  bg-white align-center    w-[18rem] md:w-[20rem] xl:w-[22rem]  p-5 pt-8 border max-w-xl   justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all">
+									<span className="text-xl font-pop">Tx</span>
 									<div className="flex">
-
 										<div className="static flex-1 rounded-r-lg items-center border">
 											<div class="grid grid-cols-3 ">
 												<>
 													<div
-														className={`${true
-															? " "
-															: "bg-red-50 filter text-red-400"
-															} ${"flex"}`}
+														className={`${
+															true ? " " : "bg-red-50 filter text-red-400"
+														} ${"flex"}`}
 													>
 														<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-gray-50">
 															$
@@ -1315,16 +1346,13 @@ class Tokens extends Component {
 														<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
 															<input
 																value={this.state.add_tx.amount}
-																onChange={
-
-																	(e) => {
-																		let temp = this.state.add_tx;
-																		temp.amount = e.target.value;
-																		this.setState({
-																			add_tx: temp
-																		})
-																	}
-																}
+																onChange={(e) => {
+																	let temp = this.state.add_tx;
+																	temp.amount = e.target.value;
+																	this.setState({
+																		add_tx: temp,
+																	});
+																}}
 																className="rounded-r-lg text-sm font-light  bg-red-50"
 																type="number"
 															/>
@@ -1337,16 +1365,13 @@ class Tokens extends Component {
 														<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
 															<input
 																value={this.state.add_tx.from}
-																onChange={
-
-																	(e) => {
-																		let temp = this.state.add_tx;
-																		temp.from = e.target.value;
-																		this.setState({
-																			add_tx: temp
-																		})
-																	}
-																}
+																onChange={(e) => {
+																	let temp = this.state.add_tx;
+																	temp.from = e.target.value;
+																	this.setState({
+																		add_tx: temp,
+																	});
+																}}
 																className="rounded-r-lg max-w-[60px] text-sm font-light  bg-red-50"
 																type="text"
 															/>
@@ -1359,16 +1384,13 @@ class Tokens extends Component {
 														<div className="flex-1 rounded-r-lg p-[5px] text-sm font-light bg-red-50">
 															<input
 																value={this.state.add_tx.to}
-																onChange={
-
-																	(e) => {
-																		let temp = this.state.add_tx;
-																		temp.to = e.target.value;
-																		this.setState({
-																			add_tx: temp
-																		})
-																	}
-																}
+																onChange={(e) => {
+																	let temp = this.state.add_tx;
+																	temp.to = e.target.value;
+																	this.setState({
+																		add_tx: temp,
+																	});
+																}}
 																className="rounded-r-lg max-w-[60px] text-sm font-light  bg-red-50"
 																type="text"
 															/>
@@ -1383,47 +1405,42 @@ class Tokens extends Component {
 										<button
 											// disabled={item.hash.slice(0, 4) === "0000"}
 											onClick={() => {
-
 												let temp = this.state.mem_pool;
 												temp.push({
-													"amount": this.state.add_tx.amount,
-													"from": this.state.add_tx.from,
-													"to": this.state.add_tx.to
-												})
+													amount: this.state.add_tx.amount,
+													from: this.state.add_tx.from,
+													to: this.state.add_tx.to,
+												});
 												this.setState({
-													mem_pool: temp
-												})
-
+													mem_pool: temp,
+												});
 											}}
-											className={`${"00009" === "0000"
-												? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
-												: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
-												}  text-white w-auto mx-auto font-medium rounded-lg px-[6px] space-x-2 py-[4px]   transition-all text-white font-pop`}
+											className={`${
+												"00009" === "0000"
+													? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
+													: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
+											}  text-white w-auto mx-auto font-medium rounded-lg px-[6px] space-x-2 py-[4px]   transition-all text-white font-pop`}
 										>
 											{/* <GiMiner /> */}
-											<span className=" font-medium text-sm ">Add to Mem-Pool</span>
+											<span className=" font-medium text-sm ">
+												Add to Mem-Pool
+											</span>
 										</button>
 									</div>
 
-									<span
-										className="text-2xl  font-pop"
-									>
-										Mem-Pool
-									</span>
+									<span className="text-2xl  font-pop">Mem-Pool</span>
 
 									<div className="flex">
-
-										{
-											this.state.mem_pool.length != 0 && <div className="flex-1 rounded-r-lg items-center border">
+										{this.state.mem_pool.length != 0 && (
+											<div className="flex-1 rounded-r-lg items-center border">
 												<div class="grid grid-cols-3 ">
 													{this.state.mem_pool.map((object, i) => {
 														return (
 															<>
 																<div
-																	className={`${true
-																		? " "
-																		: "bg-red-50 filter text-red-400"
-																		} ${"flex"}`}
+																	className={`${
+																		true ? " " : "bg-red-50 filter text-red-400"
+																	} ${"flex"}`}
 																>
 																	<div className="flex  rounded-l-lg p-[5px] text-sm font-light bg-gray-50">
 																		$
@@ -1454,68 +1471,75 @@ class Tokens extends Component {
 																	</div>
 																</div>
 															</>
-
-														)
+														);
 													})}
 												</div>
-
-
 											</div>
-
-										}
-										{
-											this.state.mem_pool.length == 0 && <div className="flex-1 text-sm font-light bg-gray-50 p-[5px] rounded-lg items-center border">
+										)}
+										{this.state.mem_pool.length == 0 && (
+											<div className="flex-1 text-sm font-light bg-gray-50 p-[5px] rounded-lg items-center border">
 												<h6>Mem-Pool Empty</h6>
 											</div>
-										}
+										)}
 									</div>
 
-									{
-										this.state.mem_pool.length != 0 && <div className="flex mx-auto w-auto">
+									{this.state.mem_pool.length != 0 && (
+										<div className="flex mx-auto w-auto">
 											<button
 												onClick={() => {
-
-													let _block_number = this.state.alice_blocks.length - 1;
-													let _prev_hash = this.state.alice_blocks[_block_number].hash;
-													let _hash = this.getSha256(this.state.alice_blocks[_block_number].block + this.state.alice_blocks[_block_number].nonce + this.state.alice_blocks[_block_number].previous);
+													let _block_number =
+														this.state.alice_blocks.length - 1;
+													let _prev_hash =
+														this.state.alice_blocks[_block_number].hash;
+													let _hash = this.getSha256(
+														this.state.alice_blocks[_block_number].block +
+															this.state.alice_blocks[_block_number].nonce +
+															this.state.alice_blocks[_block_number].previous
+													);
 													_hash = "0000" + _hash.slice(4);
 													let _timestamp = Date().toString();
 													let t1 = this.state.mem_pool.map((obj) => {
-														return obj
+														return obj;
 													});
 													let t2 = this.state.mem_pool.map((obj) => {
-														return obj
+														return obj;
 													});
 													let t3 = this.state.mem_pool.map((obj) => {
-														return obj
-													})
+														return obj;
+													});
 
 													let new_block1 = {
-														"block": _block_number + 2,
-														"chain": 1,
-														"nonce": parseInt((Math.random() * 100000).toFixed(0)),
-														"previous": _prev_hash,
-														"hash": _hash,
-														"timestamp": _timestamp,
-														"trans": t1
-													}
+														block: _block_number + 2,
+														chain: 1,
+														nonce: parseInt(
+															(Math.random() * 100000).toFixed(0)
+														),
+														previous: _prev_hash,
+														hash: _hash,
+														timestamp: _timestamp,
+														trans: t1,
+													};
 													let new_block2 = {
-														"block": _block_number + 2,
-														"chain": 1,
-														"nonce": parseInt((Math.random() * 100000).toFixed(0)),
-														"previous": _prev_hash,
-														"hash": _hash,
-														"timestamp": _timestamp,
-														"trans": t2
-													}
+														block: _block_number + 2,
+														chain: 1,
+														nonce: parseInt(
+															(Math.random() * 100000).toFixed(0)
+														),
+														previous: _prev_hash,
+														hash: _hash,
+														timestamp: _timestamp,
+														trans: t2,
+													};
 													let new_block3 = {
-														"block": _block_number + 2,
-														"chain": 1,
-														"nonce": parseInt((Math.random() * 100000).toFixed(0)),
-														"previous": _prev_hash,
-														"hash": _hash,
-														"timestamp": _timestamp,
-														"trans": t3
+														block: _block_number + 2,
+														chain: 1,
+														nonce: parseInt(
+															(Math.random() * 100000).toFixed(0)
+														),
+														previous: _prev_hash,
+														hash: _hash,
+														timestamp: _timestamp,
+														trans: t3,
 													};
 
 													let b1 = this.state.alice_blocks;
@@ -1557,31 +1581,27 @@ class Tokens extends Component {
 													// 	nancy_blocks:temp3,
 													// })
 													this.setState({
-														mem_pool: []
-													})
-													window.scrollTo(0,document.body.scrollHeight,{ behavior: "smooth" });
-
+														mem_pool: [],
+													});
+													window.scrollTo(0, document.body.scrollHeight, {
+														behavior: "smooth",
+													});
 												}}
-												className={`${"2" === "0000"
-													? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
-													: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
-													} flex items-rigth text-white font-medium rounded-lg  px-3 space-x-2 py-[4px]  transition-all text-white font-pop`}
+												className={`${
+													"2" === "0000"
+														? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
+														: "bg-gray-800  focus:ring-4 focus:outline-none focus:ring-gray-500 "
+												} flex items-rigth text-white font-medium rounded-lg  px-3 space-x-2 py-[4px]  transition-all text-white font-pop`}
 											>
 												<GiMiner />
 												<span> Mine </span>{" "}
 											</button>
 										</div>
-
-									}
+									)}
 								</div>
 							</div>
 						</div>
-
 					</div>
-
-
-
-
 				</div>
 			</>
 		);

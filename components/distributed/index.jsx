@@ -37,40 +37,40 @@ export default function Main() {
   ]);
 
   return (
-    <div className="flex flex-col items-start justify-center">
-      <h1 className="text-center text-[2rem] font-bold font-robo ">
+		<div className="flex flex-col items-start justify-center">
+			{/* <h1 className="text-center text-[2rem] font-bold font-robo ">
         Distributed
-      </h1>
-      <div className=" min-h-screen flex  md:space-x-2 lg:space-x-5 xl:space-x-8 r">
-        <div className=" ">
-          <h1 className="text-2xl py-3 text-center font-medium">Peer Alice</h1>
-          <Chain
-            chain={chain1}
-            setChain={setChain1}
-            setChain1={setChain2}
-            setChain2={setChain3}
-          />
-        </div>
+      </h1> */}
+			<div className=" min-h-screen flex  md:space-x-2 lg:space-x-5 xl:space-x-8 r">
+				<div className=" ">
+					<h1 className="text-2xl py-3 text-center font-medium">Alice</h1>
+					<Chain
+						chain={chain1}
+						setChain={setChain1}
+						setChain1={setChain2}
+						setChain2={setChain3}
+					/>
+				</div>
 
-        <div className=" ">
-          <h1 className="text-2xl py-3 text-center font-medium">Peer Bob</h1>
-          <Chain
-            chain={chain2}
-            setChain={setChain2}
-            setChain1={setChain1}
-            setChain2={setChain3}
-          />
-        </div>
-        <div className=" ">
-          <h1 className="text-2xl py-3 text-center font-medium">Peer Nancy</h1>
-          <Chain
-            chain={chain3}
-            setChain={setChain3}
-            setChain1={setChain1}
-            setChain2={setChain2}
-          />
-        </div>
-      </div>
-    </div>
-  );
+				<div className=" ">
+					<h1 className="text-2xl py-3 text-center font-medium">Bob</h1>
+					<Chain
+						chain={chain2}
+						setChain={setChain2}
+						setChain1={setChain1}
+						setChain2={setChain3}
+					/>
+				</div>
+				<div className=" ">
+					<h1 className="text-2xl py-3 text-center font-medium">Nancy</h1>
+					<Chain
+						chain={chain3}
+						setChain={setChain3}
+						setChain1={setChain1}
+						setChain2={setChain2}
+					/>
+				</div>
+			</div>
+		</div>
+	);
 }

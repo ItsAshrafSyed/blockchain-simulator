@@ -14,14 +14,14 @@ function Nav() {
   };
 
   const navigate = [
-    { name: "Hash", route: "/hash" },
-    { name: "Block", route: "/block" },
-    { name: "Blockchain", route: "/" },
-    { name: "Distributed", route: "/distributed" },
-    { name: "Tokens", route: "/tokens" },
-    { name: "Coinbase", route: "/coinbase" },
-    { name: "Contracts", route: "/contracts" },
-  ];
+		{ name: "Hash", route: "/" },
+		{ name: "Block", route: "/block" },
+		{ name: "Blockchain", route: "/blockchain" },
+		{ name: "Distributed", route: "/distributed" },
+		{ name: "Tokens", route: "/tokens" },
+		{ name: "Coinbase", route: "/coinbase" },
+		{ name: "Contracts", route: "/contracts" },
+	];
   const styles = {
     navItem: `text-gray-200 hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium`,
     actv: "bg-gray-800 text-gray-100 ",

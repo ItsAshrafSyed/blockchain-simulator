@@ -53,64 +53,66 @@ export default function HashPage() {
   }
 
   return (
-    <>
-      <div className="mt-4">
-
-        <div className="block space-y-5 p-6 mt-2 p-5 pt-8 border rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-2xl m-4">
-
-          <div className="flex space-x-5 items-center">
-            {/* <span className="">Block :</span>
+		<>
+			<div className="mt-4">
+				<div className="block space-y-5 p-6 mt-2 p-5 pt-8 border rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-2xl m-4">
+					<div className="flex space-x-5 items-center">
+						{/* <span className="">Block :</span>
             <p>
               <input className="rounded-r-lg rounded-l-lg p-[5px] text-sm font-light bg-red-50 max-w-auto"  type="number" value={2} />
             </p> */}
-            <div className="container text-2xl font-pop">
-              BLOCK #
-              <span><input className="max-auto" onChange={(e)=>{
-                setblock(e.target.value);
-                setchange(true);
-                generate_hash(data);
-              }} type="number" value={block} /></span> 
-              
-              <div className="flex-1 float-right">
-              <button
-                disabled={change == false}
-                onClick={() => {
-                	setchange(false);
-                  setnonce(parseInt((Math.random() * 100000).toFixed(0)));
-                  mine(data);
-                }}
-                className={`${change == false
-                    ? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
-                    : "bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 flex items-center text-white font-medium rounded-lg  px-4 space-x-2 py-[5px]  transition-all text-white font-pop bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 "
-                  } float-right flex hover:bg-gradient-to-br focus:ring-4 focus:outline-none  hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 flex items-center text-white font-medium rounded-lg  px-4 space-x-2 py-[5px]  transition-all text-white font-pop`}
-              >
-                <GiMiner />
-                <span>Mine</span>{" "}
-              </button>
-              </div>
-            </div>
-            
-          </div>
-          <span className="text-xs">
-                {Date().toString()}
-              </span>
-          <div className="flex space-x-5 items-center">
-            <span className="text-sm">Nonce :</span>
-            <p className="text-sm border bg-gray-50 px-2 py-[2px] rounded ">
-              {nonce}
-            </p>
-          </div>
+						<div className="container text-2xl font-pop">
+							BLOCK #
+							<span>
+								<input
+									className="max-auto"
+									onChange={(e) => {
+										setblock(e.target.value);
+										setchange(true);
+										generate_hash(data);
+									}}
+									type="number"
+									value={block}
+								/>
+							</span>
+							<div className="flex-1 float-right">
+								<button
+									disabled={change == false}
+									onClick={() => {
+										setchange(false);
+										setnonce(parseInt((Math.random() * 100000).toFixed(0)));
+										mine(data);
+									}}
+									className={`${
+										change == false
+											? "cursor-not-allowed bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none"
+											: "bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 flex items-center text-white font-medium rounded-lg  px-4 space-x-2 py-[5px]  transition-all text-white font-pop bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 "
+									} float-right flex hover:bg-gradient-to-br focus:ring-4 focus:outline-none  hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 flex items-center text-white font-medium rounded-lg  px-4 space-x-2 py-[5px]  transition-all text-white font-pop`}
+								>
+									<GiMiner />
+									<span>Mine</span>{" "}
+								</button>
+							</div>
+						</div>
+					</div>
+					<span className="text-xs">{Date().toString()}</span>
+					<div className="flex space-x-5 items-center">
+						<span className="text-sm">Nonce :</span>
+						<p className="text-sm border bg-gray-50 px-2 py-[2px] rounded ">
+							{nonce}
+						</p>
+					</div>
 
-          <div className=" flex space-x-5">
-            <label
-              htmlFor="data"
-              className="form-label inline-block mb-2 text-gray-700"
-            >
-             <span className="text-sm font-pop">Data</span>
-            </label>
-            <textarea
-              id="data"
-              className="
+					<div className=" flex space-x-5">
+						<label
+							htmlFor="data"
+							className="form-label inline-block mb-2 text-gray-700"
+						>
+							<span className="text-sm font-pop">Data</span>
+						</label>
+						<textarea
+							id="data"
+							className="
         form-control
         block
         w-full
@@ -129,32 +131,30 @@ export default function HashPage() {
       focus:ring-1
       foucus:ring-sky-100
         focus:text-gray-700 focus:bg-white focus:border-sky-400 focus:outline-none "
-              rows="12"
-              placeholder="Data inside the block"
-              onChange={(e) => {
-                setData(e.target.value);
-                generate_hash(data);
-                setchange(true);
-                // setColor(true);
-                // setTimeout(() => setColor(false), 100);
-              }}
-            ></textarea>
-          </div>
+							rows="12"
+							placeholder="Data inside the block"
+							onChange={(e) => {
+								setData(e.target.value);
+								generate_hash(data);
+								setchange(true);
+								// setColor(true);
+								// setTimeout(() => setColor(false), 100);
+							}}
+						></textarea>
+					</div>
 
-          <div className="flex space-x-5 items-center">
-            <span className="font-pop">Hash</span>
-            <p
-             className={`${
-              hash.slice(0, 4) === "0000"
-                ? text.green
-                : text.red
-            } ${text.scroll}`}
-            >
-              {hash}
-            </p>
-          </div>
-        </div>
-      </div>
-    </>
-  )
+					<div className="flex space-x-5 items-center">
+						<span className="font-pop">Hash</span>
+						<p
+							className={`${
+								hash.slice(0, 4) === "0000" ? text.green : text.red
+							} ${text.scroll}`}
+						>
+							{hash}
+						</p>
+					</div>
+				</div>
+			</div>
+		</>
+	);
 }

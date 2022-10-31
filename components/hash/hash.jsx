@@ -14,17 +14,17 @@ export default function Hash() {
   }
 
   return (
-    <div className="block space-y-5 p-6 mt-2 rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-2xl m-4">
-      <div className=" flex space-x-5">
-        <label
-          htmlFor="data"
-          className="form-label inline-block mb-2 text-gray-700"
-        >
-          Data
-        </label>
-        <textarea
-          id="data"
-          className="
+		<div className="block space-y-5 p-6 rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-2xl m-4">
+			<div className=" flex space-x-5">
+				<label
+					htmlFor="data"
+					className="form-label inline-block mb-2 text-gray-700"
+				>
+					Data
+				</label>
+				<textarea
+					id="data"
+					className="
         form-control
         block
         w-full
@@ -42,24 +42,24 @@ export default function Hash() {
       focus:ring-1
       foucus:ring-sky-100
         focus:text-gray-700 focus:bg-white focus:border-sky-400 focus:outline-none "
-          rows="12"
-          placeholder="Data"
-          onChange={(e)=>handleChange(e)}
-        ></textarea>
-      </div>
-      <div className="flex space-x-5 items-center">
-        <span className="">Hash</span>
-        <p
-          className={
-            // color
-            //   ? " bg-lime-50 border text-[#52c41a] border-[#52c41a] overflow-x-scroll scrollbar-thin rounded-lg p-2 transition-all text-medium"
-            //   :               `border overflow-x-scroll scrollbar-thin rounded-lg transition-all p-2 text-medium`
-            " bg-lime-50 border text-[#52c41a] border-[#52c41a] overflow-x-scroll scrollbar-thin rounded-lg p-2 transition-all text-medium"
-          }
-        >
-          {sha256(data)}
-        </p>
-      </div>
-    </div>
-  );
+					rows="12"
+					placeholder="Data"
+					onChange={(e) => handleChange(e)}
+				></textarea>
+			</div>
+			<div className="flex space-x-5 items-center">
+				<span className="">Hash</span>
+				<p
+					className={
+						// color
+						//   ? " bg-lime-50 border text-[#52c41a] border-[#52c41a] overflow-x-scroll scrollbar-thin rounded-lg p-2 transition-all text-medium"
+						//   :               `border overflow-x-scroll scrollbar-thin rounded-lg transition-all p-2 text-medium`
+						" bg-lime-50 border text-[#52c41a] border-[#52c41a] overflow-x-scroll scrollbar-thin rounded-lg p-2 transition-all text-medium"
+					}
+				>
+					{sha256(data)}
+				</p>
+			</div>
+		</div>
+	);
 }

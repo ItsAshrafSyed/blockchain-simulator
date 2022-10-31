@@ -58,15 +58,14 @@ const BlockChain = () => {
     setChain(
       chain.map((e, i) => {
         if (e.block === block.block) {
-          hash = mine
-            ? block.hash
-            : getSha256(
-                block.data + block.block + block.nonce + block.previous
-              );
-          console.log(hash);
+					hash = mine
+						? block.hash
+						: getSha256(
+								block.data + block.block + block.nonce + block.previous
+						  );
 
-          return { ...block, data: txt, hash };
-        } else if (e.block > block.block) {
+					return { ...block, data: txt, hash };
+				} else if (e.block > block.block) {
           const prev = hash;
           hash = getSha256(e.data + e.block + e.nonce + prev);
           return { ...e, previous: prev, hash };

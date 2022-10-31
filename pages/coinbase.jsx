@@ -331,12 +331,12 @@ class Tokens extends Component {
 		return (
 			<>
 				<div className="flex flex-col space-y-5 justify-center items-center">
-					<span
+					{/* <span
 						className="text-4xl m-[5px] font-pop w-auto mx-auto justify-center "
 						aria-current="page"
 					>
 						Coinbase
-					</span>
+					</span> */}
 
 					{/* <div className="flex columns-2">
                         <div className="flex">
