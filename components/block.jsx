@@ -1,6 +1,5 @@
 import { BsFileEarmarkText } from "react-icons/bs";
 import { GiMiner } from "react-icons/gi";
-import { useState } from "react";
 
 const Block = ({ data, hashChange, mine }) => {
   const styles = {

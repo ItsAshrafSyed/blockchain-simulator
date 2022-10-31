@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {AiOutlineMenu,AiOutlineClose} from 'react-icons/ai'
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,6 @@ function Nav() {
     { name: "Tokens", route: "/tokens" },
     { name: "Coinbase", route: "/coinbase" },
     { name: "Contracts", route: "/contracts" },
-
   ];
   const styles = {
     navItem: `text-gray-200 hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium`,
@@ -57,14 +56,12 @@ function Nav() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="bg-gray-400 inline-flex items-center justify-center p-2 rounded-md  hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-white"
-
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
-               <AiOutlineMenu className="h-6 w-6 block"/>
+                <AiOutlineMenu className="h-6 w-6 block" />
               ) : (
-              <AiOutlineClose className="h-6 w-6 block"/>
-               
+                <AiOutlineClose className="h-6 w-6 block" />
               )}
             </button>
           </div>

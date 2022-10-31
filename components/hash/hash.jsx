@@ -4,6 +4,14 @@ import { sha256 } from "js-sha256";
 export default function Hash() {
   const [data, setData] = useState("");
   const [color, setColor] = useState(false);
+  const handleChange=(e)=>{
+   
+      setData(e.target.value);
+      // setData("Etewr")
+      // setColor(true);
+      // setTimeout(() => setColor(false), 100);
+    
+  }
 
   return (
     <div className="block space-y-5 p-6 mt-2 rounded-lg shadow-lg bg-white max-w-[80vw] min-w-[80vw] xl:min-w-[65vw] full hover:shadow-2xl m-4">
@@ -36,11 +44,7 @@ export default function Hash() {
         focus:text-gray-700 focus:bg-white focus:border-sky-400 focus:outline-none "
           rows="12"
           placeholder="Data"
-          onChange={(e) => {
-            setData(e.target.value);
-            // setColor(true);
-            // setTimeout(() => setColor(false), 100);
-          }}
+          onChange={(e)=>handleChange(e)}
         ></textarea>
       </div>
       <div className="flex space-x-5 items-center">
