@@ -1,4 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blockchain Simulator
+
+A website to demonstrate all the main functions of blockchain, principles involved in a working of a blochain network.
+
+## Preview:
+
+<img src="https://github.com/ItsAshrafSyed/blockchain-simulator/blob/main/hash.png"/>
+
+<img src="https://github.com/ItsAshrafSyed/blockchain-simulator/blob/main/block.png"/>
+
+<img src="https://github.com/ItsAshrafSyed/blockchain-simulator/blob/main/blockchain.png"/>
+
+<img src="https://github.com/ItsAshrafSyed/blockchain-simulator/blob/main/distributed.png"/>
+
+## Built With
+* ### Next.js
+* ### TailwindCSS
+
 
 ## Getting Started
 
