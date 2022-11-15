@@ -5,30 +5,30 @@ import { useRouter } from "next/router";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 function Nav() {
-  const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
+	const [isOpen, setIsOpen] = useState(false);
+	const router = useRouter();
 
-  const isActive = (route) => {
-    if (route === router.pathname) return true;
-    return false;
-  };
+	const isActive = (route) => {
+		if (route === router.pathname) return true;
+		return false;
+	};
 
-  const navigate = [
+	const navigate = [
 		{ name: "Hash", route: "/" },
 		{ name: "Block", route: "/block" },
 		{ name: "Blockchain", route: "/blockchain" },
 		{ name: "Distributed", route: "/distributed" },
 		{ name: "Tokens", route: "/tokens" },
 		{ name: "Coinbase", route: "/coinbase" },
-		{ name: "Contracts", route: "/contracts" },
+		// { name: "Contracts", route: "/contracts" },
 	];
-  const styles = {
-    navItem: `text-gray-200 hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium`,
-    actv: "bg-gray-800 text-gray-100 ",
-    mobileItem:
-      "text-gray-300 hover:bg-gray-800 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium",
-  };
-  return (
+	const styles = {
+		navItem: `text-gray-200 hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium`,
+		actv: "bg-gray-800 text-gray-100 ",
+		mobileItem:
+			"text-gray-300 hover:bg-gray-800 hover:text-gray-700 block px-3 py-2 rounded-md text-base font-medium",
+	};
+	return (
 		<nav className="bg-[#101010]    navbar-dark  max-w-screen w-11/12 rounded-xl  bg-opacity-60 backdrop-filter backdrop-blur-lg z-50 mt-2">
 			<div className="max-w-screen px-4 py-2 sm:px-6 relative lg:px-8">
 				<div className="flex items-center justify-between ">

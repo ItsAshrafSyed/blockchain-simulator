@@ -643,14 +643,12 @@ class Tokens extends Component {
 					],
 				},
 			],
-			mem_pool: [
-			],
+			mem_pool: [],
 			add_tx: {
 				amount: 10,
 				from: "Darcy",
-				to: "Ash"
-			}
-
+				to: "Ash",
+			},
 		};
 		var difficulty = 4;
 		var maximumNonce = 500000;
@@ -778,7 +776,6 @@ class Tokens extends Component {
 			}
 		});
 	}
-
 
 	styles = {
 		wrapper: `font-robo flex space-y-5  block  bg-white align-center w-[15rem] md:w-[17rem] xl:w-[19rem]  p-5 pt-8 border max-w-xl  justify-center flex-col w-full shadow-md rounded-lg hover:shadow-2xl transition-all`,
